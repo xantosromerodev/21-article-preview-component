@@ -1,0 +1,23 @@
+{
+  "name": "21-article-preview-component",
+  "version": "1.0.0",
+  "description": "Article Preview Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xantosromerodev/21-article-preview-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xantosromerodev/21-article-preview-component/issues"
+  },
+  "homepage": "https://github.com/xantosromerodev/21-article-preview-component#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

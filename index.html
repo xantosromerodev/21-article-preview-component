@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- etiquetas meta -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Santos Romero">
+    <!-- styles -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <!-- titulo -->
+    <title>Article Preview Component | Frontend Club</title>
+
+    <style>
+        body {
+            background-color: #f0f6fc;
+        }
+
+        .card-custom {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .card-img-left {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .icon-share {
+            background-color: #f1f3f5;
+            border-radius: 50%;
+            padding: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .share-icons {
+            background-color: #6c757d;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.9);
+            transition: all 0.3s ease-in-out;
+            z-index: 10;
+        }
+
+        .share-icons.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .share-icons a {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .card-img-left {
+                border-radius: 1rem 1rem 0 0;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+
+    <main class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <section class="card w-100" style="max-width: 800px;">
+            <div class="row g-0 flex-lg-row flex-column">
+                <!-- Imagen -->
+                <div class="col-lg-6">
+                    <img src="./images/drawers.jpg" class="img-fluid h-100 object-fit-cover" alt="drawers">
+                </div>
+                <!-- Contenido -->
+                <div class="col-lg-6 d-flex flex-column justify-content-center p-4">
+                    <h5 class="card-title">Shift the overall look and feel by adding these wonderful
+                        touches to furniture in your home</h5>
+                    <p class="card-text">Ever been in a room and felt like something was missing? Perhaps
+                        it felt slightly bare and uninviting. I’ve got some simple tips
+                        to help you make any room feel complete.</p>
+
+                    <!-- Autor + Compartir -->
+                    <div class="d-flex align-items-center justify-content-between mt-3">
+                        <div class="d-flex align-items-center">
+                            <img src="images/avatar-michelle.jpg" class="rounded-circle me-2" width="50" alt="avatar">
+                            <div>
+                                <h6 class="mb-0">Michelle Appleton</h6>
+                                <small class="text-muted">28 Jun 2020</small>
+                            </div>
+                        </div>
+
+                        <!-- Compartir -->
+                        <div class="position-relative share-container">
+                            <!-- Íconos sociales -->
+                            <div class="social-icons d-flex justify-content-center">
+                                <p class="text-uppercase">Share</p>
+                                <a href="#" class="text-primary"><img src="images/icon-facebook.svg" alt="facebook"></a>
+                                <a href="#" class="text-info"><img src="images/icon-twitter.svg" alt="twitter"></a>
+                                <a href="#" class="text-danger"><img src="images/icon-pinterest.svg"
+                                        alt="pinterest"></a>
+                            </div>
+                            <button
+                                class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 48px; height: 48px;">
+                                <img src="images/icon-share.svg" alt="share icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        const shareBtn = document.getElementById("shareBtn");
+        const shareIcons = document.getElementById("shareIcons");
+
+        shareBtn.addEventListener("click", () => {
+            shareIcons.classList.toggle("show");
+        });
+
+        // Cierra el panel si haces clic fuera
+        document.addEventListener("click", function (e) {
+            if (!shareBtn.contains(e.target) && !shareIcons.contains(e.target)) {
+                shareIcons.classList.remove("show");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
