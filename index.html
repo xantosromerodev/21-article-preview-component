@@ -10,11 +10,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="Santos Romero" />
     <!-- styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
     <!-- fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,68 +19,13 @@
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon" />
     <!-- titulo -->
     <title>Article Preview Component | Frontend Club</title>
-
-    <style>
-        body {
-            background-color: #f0f6fc;
-        }
-
-        .card-custom {
-            border: none;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-
-        .card-img-left {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-            border-top-left-radius: 1rem;
-            border-bottom-left-radius: 1rem;
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .share-icons {
-            background-color: #6c757d;
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(0.9);
-            transition: all 0.3s ease-in-out;
-            z-index: 10;
-        }
-
-        .share-icons.show {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1);
-        }
-
-        .share-icons a {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .card-img-left {
-                border-radius: 1rem 1rem 0 0;
-                height: 200px;
-            }
-        }
-    </style>
 </head>
 
-<body class="bg-dark">
-    <main class="container-fluid py-5 d-flex justify-content-center align-items-center vh-100 bg-light">
+<body class="bg-light">
+    <main class="container py-5 d-flex justify-content-center align-items-center vh-100">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <section class="card card-custom d-flex flex-column flex-md-row">
+                <section class="card border-0 shadow card-custom d-flex flex-column flex-md-row">
                     <!-- Imagen -->
                     <div class="col-md-5 p-0">
                         <img src="images/drawers.jpg" alt="drawers" class="card-img-left h-100 w-100" />
@@ -93,11 +34,11 @@
                     <!-- Contenido -->
                     <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="fw-bold text-dark">
+                            <h4 class="fw-bold text-primary">
                                 Shift the overall look and feel by adding these wonderful
                                 touches to furniture in your home
-                            </h5>
-                            <p class="text-muted mb-4">
+                            </h4>
+                            <p class="text-primary mb-4">
                                 Ever been in a room and felt like something was missing?
                                 Perhaps it felt slightly bare and uninviting. I’ve got some
                                 simple tips to help you make any room feel complete.
@@ -109,28 +50,26 @@
                             <div class="d-flex align-items-center gap-2">
                                 <img src="images/avatar-michelle.jpg" class="avatar" alt="avatar" />
                                 <div>
-                                    <h4 class="h6 text-dark">Michelle Appleton</h4>
+                                    <h4 class="h6 text-primary">Michelle Appleton</h4>
                                     <p class="text-muted small">28 Jun 2020</p>
                                 </div>
                             </div>
 
-                            <!-- Compartir con botón -->
+                            <!-- Compartir -->
                             <div class="position-relative">
-                                <button id="shareBtn"
-                                    class="btn btn-light rounded-circle p-2 d-flex justify-content-center align-items-center">
-                                    <img src="images/icon-share.svg" alt="share">
-                                </button>
-
-                                <!-- Íconos redes sociales -->
-                                <div id="shareIcons" class="share-icons position-absolute d-flex gap-3 p-2 rounded"
-                                    style="bottom: 120%; right: 0">
-                                    <h6>Share</h6>
+                                <!-- redes sociales -->
+                                <div id="shareIcons" class="share-icons position-absolute d-flex gap-3 p-2 rounded">
+                                    <span class="text-uppercase text-white">Share</span>
                                     <a href="#"><img src="images/icon-facebook.svg" alt="facebook"></a>
                                     <a href="#"><img src="images/icon-twitter.svg" alt="twitter"></a>
                                     <a href="#"><img src="images/icon-pinterest.svg" alt="pinterest"></a>
                                 </div>
+                                <button id="shareBtn"
+                                    class="btn btn-light rounded-circle d-flex justify-content-center align-items-center"
+                                    style="width: 40px; height: 40px;">
+                                    <img src="images/icon-share.svg" alt="share">
+                                </button>
                             </div>
-                            <!-- Fin compartir -->
                         </div>
                     </div>
                 </section>
@@ -152,6 +91,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
